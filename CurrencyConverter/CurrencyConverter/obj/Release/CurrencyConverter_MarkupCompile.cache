@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\necat\source\repos\C-Sharp-MVVM-Currency-Converter\CurrencyConverter\CurrencyConverter\obj\Debug\
+C:\Users\necat\source\repos\C-Sharp-MVVM-Currency-Converter\CurrencyConverter\CurrencyConverter\obj\Release\
 CurrencyConverter
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\necat\source\repos\C-Sharp-MVVM-Currency-Converter\CurrencyConverter\CurrencyConverter\App.xaml
 1219584333
 
-14-700222966
+13633834548
 13-38814620
 MainWindow.xaml;
 
-False
+True
 

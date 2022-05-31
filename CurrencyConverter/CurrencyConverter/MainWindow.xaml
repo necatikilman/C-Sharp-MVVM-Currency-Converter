@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="CurrencyConverter" Height="450" Width="800">
 
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -43,17 +47,37 @@
             <Label Grid.Column="2">To</Label>
 
             <Label Grid.Row="1">Currency</Label>
-            <ComboBox Grid.Row="1" Grid.Column="1"/>
-            <ComboBox Grid.Row="1" Grid.Column="2"/>
+            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Currencies}" SelectedItem="{Binding FromCurrency}"/>
+            <ComboBox Grid.Row="1" Grid.Column="2" ItemsSource="{Binding Currencies}" SelectedItem="{Binding ToCurrency}"/>
 
             <Label Grid.Row="2">Amount</Label>
-            <TextBox Grid.Row="2" Grid.Column="1" />
-            <Label Grid.Row="2" Grid.Column="2"/>
+            <TextBox Text="{Binding Amount}" Grid.Row="2" Grid.Column="1" />
+            <Label Content="{Binding ExchangedAmount}" Grid.Row="2" Grid.Column="2"/>
 
-            <Button Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1">Convert</Button>
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1" Command="{Binding ConvertCommand}">Convert</Button>
         </Grid>
-        <ListBox Grid.Row="1" Margin="5" HorizontalContentAlignment="Stretch">
-
+        <ListBox ItemsSource="{Binding Exchanges}" Grid.Row="1" Margin="5" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="{Binding Amount}" Grid.Column="0"/>
+                        <Label Content="{Binding FromCurrency}" Grid.Column="1"/>
+                        <Label Content="{Binding Arrow}" Grid.Column="2"/>
+                        <Label Content="{Binding ExchangedAmount}" Grid.Column="3"/>
+                        <Label Content="{Binding ToCurrency}" Grid.Column="4"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
     </Grid>
 </Window>

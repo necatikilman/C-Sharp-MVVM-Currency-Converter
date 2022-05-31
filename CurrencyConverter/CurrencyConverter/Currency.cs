@@ -9,7 +9,7 @@ namespace CurrencyConverter
 {
     [TypeConverter(typeof(EnumDescriptionTypeConverter))]
 
-    internal enum Currency
+    public enum Currency
     {
         [Description("United States Dollar")]
         USD,
