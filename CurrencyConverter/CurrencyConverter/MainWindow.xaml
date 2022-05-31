@@ -5,8 +5,55 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CurrencyConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="CurrencyConverter" Height="450" Width="800">
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.Resources>
+                <Style TargetType="ComboBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="Label">
+                    <Setter Property="Margin" Value="2"/>
+                </Style>
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="2"/>
+                    <Setter Property="Padding" Value="2"/>
+                </Style>
+            </Grid.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="1">From</Label>
+            <Label Grid.Column="2">To</Label>
+
+            <Label Grid.Row="1">Currency</Label>
+            <ComboBox Grid.Row="1" Grid.Column="1"/>
+            <ComboBox Grid.Row="1" Grid.Column="2"/>
+
+            <Label Grid.Row="2">Amount</Label>
+            <TextBox Grid.Row="2" Grid.Column="1" />
+            <Label Grid.Row="2" Grid.Column="2"/>
+
+            <Button Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="1">Convert</Button>
+        </Grid>
+        <ListBox Grid.Row="1" Margin="5" HorizontalContentAlignment="Stretch">
+
+        </ListBox>
     </Grid>
 </Window>
