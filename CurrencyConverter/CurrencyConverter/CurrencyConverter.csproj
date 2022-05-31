@@ -64,6 +64,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\ConverterAUDtoJPY.cs" />
+    <Compile Include="Converters\ConverterAUDtoGBP.cs" />
+    <Compile Include="Converters\ConverterAUDtoUSD.cs" />
+    <Compile Include="Converters\ConverterEURtoGBP.cs" />
+    <Compile Include="Converters\ConverterEURtoJPY.cs" />
+    <Compile Include="Converters\ConverterEURtoAUD.cs" />
+    <Compile Include="Converters\ConverterGBPtoAUD.cs" />
+    <Compile Include="Converters\ConverterJPYtoAUD.cs" />
+    <Compile Include="Converters\ConverterAUDtoEUR.cs" />
+    <Compile Include="Converters\ConverterJPYtoGBP.cs" />
+    <Compile Include="Converters\ConverterJPYtoUSD.cs" />
+    <Compile Include="Converters\ConverterJPYtoEUR.cs" />
+    <Compile Include="Converters\ConverterGBPtoJPY.cs" />
+    <Compile Include="Converters\ConverterGBPtoUSD.cs" />
+    <Compile Include="Converters\ConverterUSDtoAUD.cs" />
+    <Compile Include="Converters\ConverterGBPtoEUR.cs" />
+    <Compile Include="Converters\ConverterUSDtoJPY.cs" />
+    <Compile Include="Converters\ConverterUSDtoGBP.cs" />
     <Compile Include="Currency.cs" />
     <Compile Include="EnumDescriptionTypeConverter.cs" />
     <Compile Include="Exchange.cs" />

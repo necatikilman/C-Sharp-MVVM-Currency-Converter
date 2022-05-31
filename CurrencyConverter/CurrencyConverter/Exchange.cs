@@ -71,7 +71,7 @@ namespace CurrencyConverter
             ToCurrency = toCurrency;
             Amount = amount;
             Rate = GetRate(new KeyValuePair<Currency, Currency>(FromCurrency, toCurrency));
-            ExchangedAmount = Convert();     
+            ExchangedAmount = Math.Round(Convert(), 2);     
         }
         public double Convert()
         {

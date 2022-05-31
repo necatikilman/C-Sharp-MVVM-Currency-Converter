@@ -70,15 +70,17 @@ namespace CurrencyConverter
 
         public MainViewModel()
         {
+            FromCurrency = Currency.EUR;
+            ToCurrency = Currency.USD;
             ConvertCommand = new ActionCommand(ConvertCommandAction);
         }
 
         private void ConvertCommandAction()
         {
-            if (converter != null && Amount != double.NaN)
+            if (converter != null && Amount != double.NaN && FromCurrency != ToCurrency )
             {
                 Exchange exchange = new Exchange(FromCurrency, ToCurrency, Amount);
-                ExchangedAmount = converter.Convert(exchange);
+                ExchangedAmount = Math.Round(converter.Convert(exchange), 2);
                 Exchanges.Add(exchange);
             }
             // Or simply (without converters)
